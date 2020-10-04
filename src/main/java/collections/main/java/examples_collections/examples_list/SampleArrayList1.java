@@ -1,4 +1,4 @@
-package main.java.collections.main.java.examples;
+package main.java.collections.main.java.examples_collections.examples_list;
 
 import java.util.*;
 

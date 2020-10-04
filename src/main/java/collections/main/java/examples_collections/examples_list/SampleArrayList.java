@@ -1,5 +1,4 @@
-package main.java.collections.main.java.examples;
-import java.sql.SQLOutput;
+package main.java.collections.main.java.examples_collections.examples_list;
 import  java.util.*;
 
 public class SampleArrayList {
