@@ -12,6 +12,7 @@ public class App {
         App obj1 = new App(); // created object  of App class
         System.out.println(obj1.toString()); // will print object reference address
         System.out.println(obj1.str); // to print static variable value using object of this class
+        System.out.println(obj1.str.length()); // will print length of variable value.
 
     }
 

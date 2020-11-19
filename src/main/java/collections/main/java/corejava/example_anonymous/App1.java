@@ -9,7 +9,7 @@ public class App1 {
     public static void main(String[] args) {
 
 
-        // Following snippet we are implementing itnerv=face via anonymous class
+        // Following snippet we are implementing itnerface via anonymous class
         Machine mac1 = new Machine() {
             @Override
             public void start() {
