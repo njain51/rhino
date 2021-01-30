@@ -1,0 +1,70 @@
+
+Assignment
+
+1) What will be the output of following program and why -
+     public class Test 
+         {
+            static int i=10;
+	
+           public static void main(String args[])
+            {
+               Test obj = new Test();
+               Test obj2 = new Test();
+               Test obj3 = new Test();
+
+              obj.i=obj.i+1; => 
+              obj2.i=obj2.i+1;
+              obj3.i=obj3.i+1;
+                     
+               System.out.println(obj.i);               
+         }
+      } 
+13
+
+2) What will be the output of following program and why-
+     public class Test 
+         {
+            int i=10;
+	
+           public static void main(String args[])
+            {
+               Test obj = new Test();
+               Test obj2 = new Test();
+               Test obj3 = new Test();
+
+              obj.i=obj.i+1;
+              obj2.i=obj2.i+1;
+              obj3.i=obj3.i+1;
+                     
+               System.out.println(obj.i);               
+         }
+      }
+
+11
+
+3) What will be the output of the following program and why-
+
+public class Test 
+     {                  
+             public void myMethod()
+                    {    
+    	               String myVar = "I am inside myMethod";
+    	               System.out.println(myVar);
+                    }
+            public static void main(String args[])
+                    {                         
+                         String str= "I am inside main method";
+                         System.out.println(str);
+                         Test obj = new Test();     
+                         System.out.println(obj.myVar);                        
+                         System.out.println(myVar);
+                       
+                    }
+     }
+
+Error
+
+
+
+
+
