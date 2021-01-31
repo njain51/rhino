@@ -1,0 +1,505 @@
+Other way of converting(wrapping) primitive data types to wrapper classes is as shown in example below-
+
+
+`class WrappingUnwrapping 
+{ 
+    public static void main(String args[]) 
+    { 
+        //  byte data type 
+        byte a = 1; 
+        // wrapping around Byte object 
+        Byte byteobj = new Byte(a); 
+        // int data type 
+        int b = 10;  
+        //wrapping around Integer object 
+        Integer intobj = new Integer(b);   
+        // float data type 
+        float c = 18.6f;   
+        // wrapping around Float object 
+        Float floatobj = new Float(c);   
+        // double data type 
+        double d = 250.5;   
+        // Wrapping around Double object 
+        Double doubleobj = new Double(d);   
+        // char data type 
+        char e='a'; 
+        // wrapping around Character object 
+        Character charobj=new Character(e);   
+        //  printing the values from objects 
+        System.out.println("Values of Wrapper objects (printing as objects)"); 
+        System.out.println("Byte object byteobj:  " + byteobj); 
+        System.out.println("Integer object intobj:  " + intobj); 
+        System.out.println("Float object floatobj:  " + floatobj); 
+        System.out.println("Double object doubleobj:  " + doubleobj); 
+        System.out.println("Character object charobj:  " + charobj);   
+        // objects to data types (retrieving data types from objects) 
+        // unwrapping objects to primitive data types 
+        byte bv = byteobj; // wrapper class object downgraded to primitive data type
+byte bv = byteobj.byteValue(); // also valid 
+        int iv = intobj; 
+        float fv = floatobj; 
+        double dv = doubleobj; 
+        char cv = charobj;   
+        // printing the values from data types 
+        System.out.println("Unwrapped values (printing as data types)"); 
+        System.out.println("byte value, bv: " + bv); 
+        System.out.println("int value, iv: " + iv); 
+        System.out.println("float value, fv: " + fv); 
+        System.out.println("double value, dv: " + dv); 
+        System.out.println("char value, cv: " + cv); 
+    } 
+} 
+`
+
+
+Assignment
+
+1) Write a Java program to display "Hi, my name is Tom".
+
+ package com.nitin.java;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Hi, my name is Tom");
+    }
+}
+
+2) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                    
+                     char cr='a';  
+                     String str=new String(cr);      
+                     System.out.println(str);                                       
+                }
+                    
+         }
+Ans: Error – since there is no Constructor  in class String for passing char. 
+
+String str=new String([‘a’]);  // valid     
+
+3) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                    
+                     char cr[]={ 'h','e','l','l','o' };  // every element of array will have char, char tells compiler what kind of individual elements array will hold.  [] tells compiler its an array. 
+
+cr[] = [‘a’, ‘b’ ] ; // not valid 
+// cr[0] = ‘h’; 
+// cr[1] = ‘e’; 
+ 
+
+                     String str=new String(cr);      
+                     System.out.println(str);                                       
+                }
+                    
+         }
+Ans: it will print => hello
+
+4) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                    
+                     String str="a";  
+                     char cr=(char) str;
+                     System.out.println(cr);                                       
+                }
+                    
+         }
+
+Ans -> should give error as we cannot explicit convert String to char. 
+
+5) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                    
+                     String str="7";  
+                     int i=(int)str;
+                     System.out.println(i);                                       
+                }
+                    
+         }
+
+Ans. ->  error since String cannot be explicitly converted. 
+
+6) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                    
+                     String str="7";                       
+                     int i=Integer.parseInt(str);
+                     System.out.println(i);                                       
+                }
+                    
+         }
+Ans. 7 
+
+7) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                    
+                     String str="911";  
+                     int i=(int)str;
+                     System.out.println(i);                                       
+                }
+                    
+         }
+
+Ans. Error. String cannot be cast to number explicitly. 
+
+8) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                    
+                     String str="911";                       
+                     int i=Integer.parseInt(str);
+                     System.out.println(i);                                       
+                }
+                    
+         }
+Ans. 911
+
+9) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=7;
+                     String str=(String) i;  
+                     System.out.println(str);                                       
+                }                    
+         }
+
+Error: explicit conversion only valid for numbers
+
+10) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=7;
+                     Integer i1=new Integer(i);  
+                     System.out.println(i1);                                       
+                }                    
+         }
+
+Ans. 7 
+11) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                                              
+                     Integer i1=new Integer(7);  
+                     System.out.println(i1);                                       
+                }                    
+         }
+
+Ans. 7 
+
+12) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=7;
+                     Integer i1=(Integer)i;  
+                     System.out.println(i1);                                       
+                }                    
+         }
+Ans. 7 , we are upcasting primitive to Integer Object. 
+
+13) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=7;
+                     Integer ir=(Integer)i;
+                     String str=ir.toString(i);  
+                     System.out.println(str);                                       
+                }
+                    
+         }
+
+Ans. “7” 
+
+14) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=1658;
+                     Integer ir=(Integer)i;
+                     String str=ir.toString(i);  
+                     System.out.println(str);                                       
+                }
+                    
+         }
+Ans. “1658”
+
+15) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=7;
+                     String str=Integer.toString(i);  
+                     System.out.println(str);                                       
+                }
+                    
+         }
+
+Ans. 7
+16) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=1658;
+                     String str=Integer.toString(i);  
+                     System.out.println(str);                                       
+                }
+                    
+         }
+
+Ans. 1658
+
+17) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=1;
+                     char cr=(char) i;  
+                     System.out.println(cr);                                       
+                }
+                    
+         }
+
+Ans. error, Explicit conversion works for number data types only. 
+
+18) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=1;
+                     char cr=(char) (i+'0');  
+                     System.out.println(cr);                                       
+                }
+                    
+         }
+
+Ans. error, since adding incompatible data types – int and char 
+
+
+19) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=7;
+                     char cr=(char) i;  
+                     System.out.println(cr);                                       
+                }
+                    
+         }
+
+Ans.  int cannot be explicitly converted to char. 
+
+20) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {                                                         
+                     int i=7;
+                     char cr=(char) (i+'0');  
+                     System.out.println(cr);                                       
+                }
+                    
+         }
+
+Ans. Error, incompatible data types. 
+
+21) What will be the output of the following program and why ?
+class Test
+         {           
+
+              public static void main(String args[])
+                {      
+                     char cr='7';                                                     
+                     int i=(int)cr;                     
+                     System.out.println(i);                                       
+                }
+                    
+         }
+Ans. Error, explicit conversion works for numbers only. 
+
+22) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    { 
+        char ch = '3'; 
+        System.out.println("char value: " + ch);           
+        int a = Character.getNumericValue(ch); 
+        System.out.println("int value: " + a); 
+    } 
+} 
+
+Ans. char value: 3
+         int value: 3
+23) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        char ch = '3'; 
+        System.out.println("char value: " + ch);          
+        int a = Integer.parseInt(String.valueOf(ch)); 
+        System.out.println("int value: " + a); 
+    } 
+} 
+
+Ans.   char value:  3   , just printing char value 
+           Int value: 3 , char is converted to String and then parseInt method takes String to convert to Integer object. 
+
+24) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        int i = 3; 
+        long li=(long)i;
+        System.out.println(li);                  
+    } 
+} 
+
+Ans. 3
+25) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        long li = 3; 
+        int i=(long)li;
+        System.out.println(i);                  
+    } 
+} 
+Ans. error because int is not equal to long.
+
+26) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        int i = 3; 
+        float fi=(float)i;
+        System.out.println(fi);                  
+    } 
+} 
+
+Ans. 3.0f, converted to float. 
+
+27) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        float fi = 3.11f; 
+        int i=(int)fi;
+        System.out.println(i);                  
+    } 
+} 
+Ans. 3
+
+28) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        float fi = 3.11; 
+        int i=(int)fi;
+        System.out.println(i);                  
+    } 
+} 
+
+Ans.  IDE complaining for double declaration 
+
+29) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        float fi = 3f; 
+        int i=(int)fi;
+        System.out.println(i);                  
+    } 
+} 
+
+Ans. 3
+
+30) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        float fi = 3; 
+        int i=(int)fi;
+        System.out.println(i);                  
+    } 
+} 
+
+Ans. 3
+
+31) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        float fi = 3.11; 
+        int i=fi.intValue();
+        System.out.println(i);                  
+    } 
+} 
+Ans. Error since fi is primitive so no method available to it. 
+
+32) What will be the output of the following program and why ?
+class Test 
+{ 
+    public static void main(String[] args) 
+    {        
+        Float fi = new Float(3.11); 
+        int i=fi.intValue();
+        System.out.println(i);                  
+    } 
+} 
+
+Ans. 3
