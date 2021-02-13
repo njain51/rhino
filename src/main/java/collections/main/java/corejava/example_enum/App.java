@@ -10,10 +10,11 @@ public class App {
     public static void main(String[] args) {
         Color c1 = Color.RED;
         System.out.println(c1);
+        System.out.println(c1.getClass());  // enum Color is converted to class Color
     }
 }
 
-// Every enum internall implemented using class
+// Every enum internally implemented using class
 /* internally above enum Color is converted to
 class Color
 {
